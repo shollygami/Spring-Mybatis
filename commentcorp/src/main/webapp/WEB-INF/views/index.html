@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <link rel="icon" href="../../favicon.ico"></link>
+
+
+
+<!--     <title> <span th:text="#{lenguage.Title}"></span> </title> -->
+    
+    <title th:text="#{lenguage.Title}"> </title>
+    
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet"></link>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+    <!-- Custom styles for this template -->
+    <link href="css/signin.css" rel="stylesheet"></link>
+    
+  </head>
+
+  <body>
+  
+    <div class="container">
+		<div class="row">
+      	<div class="col-md-3 col-md-offset-9">
+      	<div class="dropdown">
+		  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+		    <span th:text="#{lenguage.lenguage}"></span>
+		    <span class="caret"></span>
+		  </button>
+		  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+		    <li role="presentation"><a role="menuitem" tabindex="-1" href="?language=en"><span th:text="#{lenguage.English}"></span></a></li>
+		    <li role="presentation"><a role="menuitem" tabindex="-1" href="?language=es"><span th:text="#{lenguage.Spanish}"></span></a></li>
+		  </ul>
+		</div>
+      	</div>
+      	</div>
+      	      	
+	<!-- div class="col-md-4 col-md-offset-4" -->
+      <form class="form-signin" role="form" action="#" th:action="@{/home}" th:object="${User}" method="POST">     	
+        <h2 class="form-signin-heading" th:text="#{title.login}"> </h2>
+        <input type="text" class="form-control" th:field="*{Login}" th:placeholder="#{lenguage.placeuser}" />
+        <input type="password" class="form-control" th:field="*{Pass}" th:placeholder="#{lenguage.placePass}" />
+        <label class="checkbox">
+          <input type="checkbox" value="remember-me"/> <span th:text="#{lenguage.rememberme}"></span>
+        </label>
+        <button class="btn btn-lg btn-primary btn-block" type="submit"> <span th:text="#{lenguage.sign}"></span> </button>
+      </form>
+	<!-- /divn -->
+    </div>  
+
+</body></html>
